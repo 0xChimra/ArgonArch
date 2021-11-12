@@ -69,13 +69,12 @@ else:
 execute_command("ls /mnt | xargs btrfs subvolume delete")
 execute_command("btrfs subvolume create /mnt/@")
 execute_command("umount /mnt")
-execute_command(";;")
-execute_command("*)")
+
 #Reboot
 print("Rebooting in 3 seconds")
 time.sleep(3)
 execute_command("reboot now")
-execute_command(";;")
+
 
 execute_command("mount -t btrfs -o subvol=@ -L ROOT /mnt")
 execute_command("mkdir /mnt/boot")

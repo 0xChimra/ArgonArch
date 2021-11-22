@@ -163,6 +163,7 @@ PKGS=(
 'python-psutil'
 'python-pyqt5'
 'python-pip'
+'qemu'
 'rsync'
 'sddm'
 'sddm-kcm'

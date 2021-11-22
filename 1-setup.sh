@@ -163,14 +163,12 @@ PKGS=(
 'python-psutil'
 'python-pyqt5'
 'python-pip'
-'qemu'
 'rsync'
 'sddm'
 'sddm-kcm'
 'flameshot'
 #'steam'
 'sudo'
-'swtpm' 
 #'synergy' ###### not needed?
 'systemsettings'
 'terminus-font'
@@ -233,7 +231,7 @@ echo "username=$username" >> ${HOME}/ArgonArch/install.conf
 fi
 if [ $(whoami) = "root"  ];
 then
-    useradd -m -G wheel,libvirt -s /bin/bash $username 
+    useradd -m -G wheel -s /bin/bash $username 
 	passwd $username
 	cp -R /root/ArgonArch /home/$username/
     chown -R $username: /home/$username/ArgonArch

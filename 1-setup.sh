@@ -169,6 +169,7 @@ PKGS=(
 'flameshot'
 #'steam'
 'sudo'
+'swtpm' 
 #'synergy' ###### not needed?
 'systemsettings'
 'terminus-font'

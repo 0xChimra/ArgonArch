@@ -30,6 +30,14 @@ echo -e "-----------------------------------------------------------------------
 reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 mkdir /mnt
 
+# Set keymaps
+echo "-------------------------------------------------"
+echo "Enter keymap country-code  (example : de, us)"
+echo "-------------------------------------------------"
+read map
+
+localectl --no-ask-password set-keymap $map
+echo $map > /root/ArgonArch/keymap
 
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs

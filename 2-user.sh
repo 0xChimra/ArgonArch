@@ -16,6 +16,11 @@ mkdir -p ${HOME}/Documents/setup/zsh
 cp ${HOME}/ArgonArch/zshrc ${HOME}/.zshrc
 cp ${HOME}/ArgonArch/zalias ${HOME}/Documents/setup/zsh/zalias
 
+
+
+
+
+
 PKGS=(
 'autojump'
 'dxvk-bin' # DXVK DirectX to Vulcan

@@ -31,13 +31,6 @@ timedatectl --no-ask-password set-timezone America/Chicago
 timedatectl --no-ask-password set-ntp 1
 localectl --no-ask-password set-locale LANG="en_US.UTF-8" LC_TIME="en_US.UTF-8"
 
-# Set keymaps
-echo "-------------------------------------------------"
-echo "Enter keymap country-code  (example : de, us)"
-echo "-------------------------------------------------"
-read map
-
-localectl --no-ask-password set-keymap $map
 
 # Add sudo no password rights
 sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
@@ -230,7 +223,11 @@ then
     chown -R $username: /home/$username/ArgonArch
 	read -p "Enter a Hostname:" nameofmachine
 	echo $nameofmachine > /etc/hostname
+	if source keymap; then
+		map="cat keymap"
+		echo $map >> /etc/vconsole.conf
 else
 	echo "You are already a user proceed with aur installs"
 fi
+
 

@@ -227,4 +227,7 @@ else
 	echo "You are already a user proceed with aur installs"
 fi
 
+if source keymap; then
+	map="cat keymap"
+	echo "KEYMAP=$map" >> /etc/vconsole.conf
 

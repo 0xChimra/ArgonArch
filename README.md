@@ -1,1 +1,1 @@
-Arch Installer
+ArgonArch Installer

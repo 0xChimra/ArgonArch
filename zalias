@@ -1,0 +1,128 @@
+export EDITOR=nano
+
+function ex {
+ if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: ex <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+ else
+    if [ -f $1 ] ; then
+        # NAME=${1%.*}
+        # mkdir $NAME && cd $NAME
+        case $1 in
+          *.tar.bz2)   tar xvjf ../$1    ;;
+          *.tar.gz)    tar xvzf ../$1    ;;
+          *.tar.xz)    tar xvJf ../$1    ;;
+          *.lzma)      unlzma ../$1      ;;
+          *.bz2)       bunzip2 ../$1     ;;
+          *.rar)       unrar x -ad ../$1 ;;
+          *.gz)        gunzip ../$1      ;;
+          *.tar)       tar xvf ../$1     ;;
+          *.tbz2)      tar xvjf ../$1    ;;
+          *.tgz)       tar xvzf ../$1    ;;
+          *.zip)       unzip ../$1       ;;
+          *.Z)         uncompress ../$1  ;;
+          *.7z)        7z x ../$1        ;;
+          *.xz)        unxz ../$1        ;;
+          *.exe)       cabextract ../$1  ;;
+          *)           echo "ex: '$1' - unknown archive method" ;;
+        esac
+    else
+        echo "$1 - file does not exist"
+    fi
+fi
+}
+
+function systeminfo()   # Get current host related info.
+{
+    echo -e "\n${BRed}System Informations:$NC " ; uname -a
+    echo -e "\n${BRed}Online User:$NC " ; w -hs |
+             cut -d " " -f1 | sort | uniq
+    echo -e "\n${BRed}Date :$NC " ; date
+    echo -e "\n${BRed}Server stats :$NC " ; uptime
+    echo -e "\n${BRed}Memory stats :$NC " ; free
+    echo -e "\n${BRed}Public IP Address :$NC " ; my_ip
+    echo -e "\n${BRed}Open connections :$NC "; netstat -pan --inet;
+    echo -e "\n${BRed}CPU info :$NC "; cat /proc/cpuinfo ;
+    echo -e "\n"
+}
+
+
+function public_ip() # Get IP adress.
+{
+   curl ifconfig.co
+}
+
+# Find a file with a pattern in name:
+function ff()
+{
+   find . -type f -iname '*'"$*"'*' -ls ;
+}
+
+# Creates an archive (*.tar.gz) from given directory.
+function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
+
+# Create a ZIP archive of a file or folder.
+function makezip() { zip -r "${1%%/}.zip" "$1" ; }
+
+
+alias edit="sudo $EDITOR"
+alias pac-date='yay -Syyu'
+alias pac='sudo pacman'
+alias pacs='sudo pacman -S'
+alias pacr='sudo pacman -R'
+alias pl='disown &'
+alias pac-search='pacman -Q | grep '
+
+[ -d "/home/$USER/.steam/steam/compatibilitytools.d/" ] && alias zproton='dolphin /home/$USER/.steam/steam/compatibilitytools.d/'
+
+alias pips='sudo pip3 install'
+alias pipr='sudo pip3 uninstall'
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias l='ls -lFh --color=auto'     #size,show type,human readable
+alias la='ls -lAFh --color=auto'   #long list,show almost all,show type,human readable
+alias lr='ls -tRFh --color=auto'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh --color=auto'   #long list,sorted by date,show type,human readable
+alias ll='ls -l --color=auto'      #long list
+alias ldot='ls -ld .* --color=auto'
+alias lS='ls -1FSsh --color=auto'
+alias lart='ls -1Fcart --color=auto'
+alias lrt='ls -1Fcrt --color=auto'
+alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+alias zalias='${=EDITOR} /home/$USER/Documents/setup/zsh/aliasrc'
+alias cls='clear'
+alias sysinfo='neofetch'
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+alias wallpaper='dolphin /home/$USER/.local/share/wallpapers/'
+
+alias t='tail -f'
+
+# Command line head / tail shortcuts
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
+
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+alias sudo fd='find . -type d -name'
+alias sudo ff='find . -type f -name'
+
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias help='man'
+alias p='ps -f'
+alias sortnr='sort -n -r'
+alias unexport='unset'
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+

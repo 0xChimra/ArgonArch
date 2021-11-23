@@ -11,10 +11,10 @@ makepkg -si --noconfirm
 cd ~
 touch "$HOME/.cache/zshhistory"
 chsh -s $(which zsh)
-#ZSH SETUP CONFIG STUFF
-#
-#
-#
+
+mkdir -p ${HOME}/Documents/setup/zsh
+cp ${HOME}/ArgonArch/zshrc ${HOME}/.zshrc
+cp ${HOME}/ArgonArch/zalias ${HOME}/Documents/setup/zsh/zalias
 
 PKGS=(
 'autojump'

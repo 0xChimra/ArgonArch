@@ -3,7 +3,7 @@ echo -e "\nINSTALLING AUR SOFTWARE\n"
 
 echo "CLONING: YAY"
 cd ~
-mkdir ${HOME}/Documents/setup
+mkdir -p ${HOME}/Documents/setup
 cd ${HOME}/Documents/setup
 git clone "https://aur.archlinux.org/yay.git"
 cd ${HOME}/Documents/setup/yay

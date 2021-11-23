@@ -17,21 +17,14 @@ cp ${HOME}/ArgonArch/zshrc ${HOME}/.zshrc
 cp ${HOME}/ArgonArch/zalias ${HOME}/Documents/setup/zsh/zalias
 
 
-
-
-
-
 PKGS=(
 'autojump'
-'dxvk-bin' # DXVK DirectX to Vulcan
-'nerd-fonts-fira-code'
-'noto-fonts-emoji'
-'papirus-icon-theme'
+'dxvk-bin'
 'plasma-pa'
-'ocs-url' # install packages from websites
+'ocs-url'
 'ttf-droid'
 'ttf-hack'
-'ttf-meslo' # Nerdfont package
+'ttf-meslo'
 'ttf-roboto'
 )
 

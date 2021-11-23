@@ -45,7 +45,7 @@ pacman -Sy --noconfirm
 echo -e "\nInstalling Base System\n"
 
 PKGS=(
-'mesa' # Essential Xorg First
+'mesa'
 'xorg'
 'xorg-server'
 'xorg-apps'
@@ -53,13 +53,13 @@ PKGS=(
 'xorg-xkill'
 'xorg-xinit'
 'xterm'
-'plasma-desktop' # KDE Load second
-'alsa-plugins' # audio plugins
-'alsa-utils' # audio utils
-'ark' # compression
+'plasma-desktop'
+'alsa-plugins'
+'alsa-utils'
+'ark'
 'audiocd-kio' 
-'autoconf' # build
-'automake' # build
+'autoconf'
+'automake'
 'base'
 'bash-completion'
 'bind'
@@ -73,7 +73,7 @@ PKGS=(
 'breeze-gtk'
 'bridge-utils'
 'btrfs-progs'
-'code' # Visual Studio code
+'code'
 'cronie'
 'cups'
 'dialog'
@@ -81,7 +81,7 @@ PKGS=(
 'dolphin'
 'dosfstools'
 'dtc'
-'efibootmgr' # EFI boot
+'efibootmgr'
 'egl-wayland'
 'exfat-utils'
 'extra-cmake-modules'
@@ -102,7 +102,6 @@ PKGS=(
 'haveged'
 'htop'
 'iptables-nft'
-'jdk-openjdk' # Java 17
 'kate'
 'kcodecs'
 'kcoreaddons'
@@ -110,8 +109,6 @@ PKGS=(
 'kde-gtk-config'
 'kinfocenter'
 'kscreen'
-'kvantum-qt5'
-'kitty'
 'konsole'
 'layer-shell-qt'
 'libdvdcss'
@@ -134,7 +131,7 @@ PKGS=(
 'openbsd-netcat'
 'openssh'
 'os-prober'
-'oxygen' ###### not needed?
+'oxygen'
 'p7zip'
 'pacman-contrib'
 'patch'

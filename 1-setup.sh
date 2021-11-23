@@ -223,9 +223,6 @@ then
     chown -R $username: /home/$username/ArgonArch
 	read -p "Enter a Hostname:" nameofmachine
 	echo $nameofmachine > /etc/hostname
-	if source keymap; then
-		map="cat keymap"
-		echo "KEYMAP=$map" >> /etc/vconsole.conf
 else
 	echo "You are already a user proceed with aur installs"
 fi

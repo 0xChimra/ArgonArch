@@ -1,1 +1,1 @@
-ArgonArch Installer
+ArgonArch Installer 2.0

@@ -62,7 +62,7 @@ unsetopt ALL_EXPORT
 
 ## Source Files
 ###############
-[ -f "$HOME/Documents/setup/zsh/aliasrc" ] && source "$HOME/Documents/setup/zsh/zalias"
+source "$HOME/Documents/setup/zsh/zalias"
 
 ### Source plugins
 ##################

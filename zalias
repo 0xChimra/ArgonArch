@@ -89,7 +89,7 @@ alias lS='ls -1FSsh --color=auto'
 alias lart='ls -1Fcart --color=auto'
 alias lrt='ls -1Fcrt --color=auto'
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
-alias zalias='${=EDITOR} /home/$USER/Documents/setup/zsh/aliasrc'
+alias zalias='${=EDITOR} /home/$USER/Documents/setup/zsh/zalias'
 alias cls='clear'
 alias sysinfo='neofetch'
 alias grep='grep --color'

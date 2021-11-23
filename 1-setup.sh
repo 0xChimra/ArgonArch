@@ -225,7 +225,7 @@ then
 	echo $nameofmachine > /etc/hostname
 	if source keymap; then
 		map="cat keymap"
-		echo $map >> /etc/vconsole.conf
+		echo "KEYMAP=$map" >> /etc/vconsole.conf
 else
 	echo "You are already a user proceed with aur installs"
 fi

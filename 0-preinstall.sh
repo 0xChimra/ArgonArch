@@ -6,12 +6,12 @@ echo "Setting up mirrors for optimal download          "
 echo "-------------------------------------------------"
 iso=$(curl -4 ifconfig.co/country-iso)
 timedatectl set-ntp true
-pacman -S --noconfirm pacman-contrib terminus-font
-setfont ter-v22b
+#pacman -S --noconfirm pacman-contrib terminus-font
+#setfont ter-v22b
 sed -i 's/^#Para/Para/' /etc/pacman.conf
 pacman -S --noconfirm reflector rsync grub
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-echo -e "-------------------------------------------------------------------------"
+echo -e "-------------------------------------------------------------------------------------------"
 echo -e '       d8888                                               d8888                 888'      
 echo -e '      d88888                                              d88888                 888'      
 echo -e '     d88P888                                             d88P888                 888'      
@@ -23,9 +23,9 @@ echo -e 'd88P     888 888     "Y88888  "Y88P"  888  888      d88P     888 888   
 echo -e '                         888'                                                              
 echo -e '                    Y8b d88P'                                                              
 echo -e '                     "Y88P"'                                                               
-echo -e "-------------------------------------------------------------------------"
+echo -e "-------------------------------------------------------------------------------------------"
 echo -e "Setting up fast mirrors for your country: ' $iso ' !"
-echo -e "-------------------------------------------------------------------------"
+echo -e "-------------------------------------------------------------------------------------------"
 
 reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 mkdir /mnt

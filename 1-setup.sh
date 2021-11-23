@@ -97,11 +97,8 @@ PKGS=(
 'fuse2'
 'fuse3'
 'fuseiso'
-#'gamemode'
 'gcc'
-'gimp' # Photo editing
 'git'
-'gparted' # partition management
 'gptfdisk'
 'grub'
 'grub-customizer'
@@ -131,7 +128,6 @@ PKGS=(
 'linux-firmware'
 'linux-headers'
 'lsof'
-#'lutris'
 'lzop'
 'm4'
 'make'
@@ -166,10 +162,7 @@ PKGS=(
 'rsync'
 'sddm'
 'sddm-kcm'
-'flameshot'
-#'steam'
 'sudo'
-#'synergy' ###### not needed?
 'systemsettings'
 'terminus-font'
 'traceroute'

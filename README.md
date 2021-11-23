@@ -1,2 +1,2 @@
-#ArchArgon
+# ArchArgon
 Simple Arch Install Script

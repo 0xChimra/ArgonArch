@@ -37,7 +37,7 @@ echo "-------------------------------------------------"
 read map
 
 localectl --no-ask-password set-keymap $map
-echo $map > /root/ArgonArch/keymap
+
 
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs
@@ -138,7 +138,6 @@ if [[  $TOTALMEM -lt 8000000 ]]; then
     #The line below is written to /mnt/ but doesn't contain /mnt/, since it's just / for the sysytem itself.
     echo "/opt/swap/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab #Add swap to fstab, so it KEEPS working after installation.
 fi
-echo "KEYMAP=$map" > /etc/vconsole.conf
 echo "-------------------------------------------------"
 echo "--   SYSTEM READY FOR 1-setup       --"
 echo "-------------------------------------------------"

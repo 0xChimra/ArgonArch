@@ -6,5 +6,5 @@ A Simple Arch KDE Installer
 
 ## Features:
 - ucode auto detection & installation
-- graphicard auto detection & driver installation
+- graphics card auto detection & driver installation
 - preinstalled ZSH Config + Alias Collection that can be accssed with `zalias` and `zshrc`

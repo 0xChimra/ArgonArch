@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-echo "--------------------------------------"
-echo "--          Network Setup           --"
-echo "--------------------------------------"
+#"--------------------------------------"
+#"--          Network Setup           --"
+#"--------------------------------------"
 pacman -S networkmanager dhclient --noconfirm --needed
 systemctl enable --now NetworkManager
-echo "-------------------------------------------------"
-echo "Setting up mirrors for optimal download          "
-echo "-------------------------------------------------"
+#"-------------------------------------------------"
+#"Setting up mirrors for optimal download          "
+#"-------------------------------------------------"
 pacman -S --noconfirm pacman-contrib curl
 pacman -S --noconfirm reflector rsync
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
@@ -22,9 +22,9 @@ sed -i "s/#MAKEFLAGS=\"-j2\"/MAKEFLAGS=\"-j$nc\"/g" /etc/makepkg.conf
 echo "Changing the compression settings for "$nc" cores."
 sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf
 fi
-echo "-------------------------------------------------"
-echo "       Setup Language to US and set locale       "
-echo "-------------------------------------------------"
+#echo "-------------------------------------------------"
+#echo "       Setup Language to US and set locale       "
+#echo "-------------------------------------------------"
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 timedatectl --no-ask-password set-timezone America/Chicago
@@ -42,7 +42,7 @@ sed -i 's/^#Para/Para/' /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 pacman -Sy --noconfirm
 
-echo -e "\nInstalling Base System\n"
+#echo -e "\nInstalling Base System\n"
 
 PKGS=(
 'mesa'

@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-echo -e "\nINSTALLING AUR SOFTWARE\n"
-
-echo "CLONING: YAY"
 cd ~
 mkdir -p ${HOME}/Documents/setup
 cd ${HOME}/Documents/setup
@@ -33,11 +30,5 @@ for PKG in "${PKGS[@]}"; do
 done
 
 export PATH=$PATH:~/.local/bin
-#cp -r $HOME/ArgonArch/dotfiles/* $HOME/.config/
-#pip install konsave
-#konsave -i $HOME/ArgonArch/kde.knsv
-#sleep 1
-#konsave -a kde
 
-echo -e "\nDone!\n"
 exit

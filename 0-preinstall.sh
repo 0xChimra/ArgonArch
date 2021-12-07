@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-echo "-------------------------------------------------"
-echo "Setting up mirrors for optimal download          "
-echo "-------------------------------------------------"
 iso=$(curl -4 ifconfig.co/country-iso)
 timedatectl set-ntp true
 #pacman -S --noconfirm pacman-contrib terminus-font
@@ -108,23 +105,14 @@ if ! grep -qs '/mnt' /proc/mounts; then
     reboot now
 fi
 
-echo "-------------------------------------------------"
-echo "-- Arch Install on Main Drive       --"
-echo "-------------------------------------------------"
 pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
 cp -R ${SCRIPT_DIR} /mnt/root/ArgonArch
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
-echo "-------------------------------------------------"
-echo "--GRUB BIOS Bootloader Install&Check--"
-echo "-------------------------------------------------"
 if [[ ! -d "/sys/firmware/efi" ]]; then
     grub-install --boot-directory=/mnt/boot ${DISK}
 fi
-echo "-------------------------------------------------"
-echo "-- Check for low memory systems <8G --"
-echo "-------------------------------------------------"
 TOTALMEM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*')
 if [[  $TOTALMEM -lt 8000000 ]]; then
     #Put swap into the actual system, not into RAM disk, otherwise there is no point in it, it'll cache RAM into RAM. So, /mnt/ everything.
@@ -138,6 +126,4 @@ if [[  $TOTALMEM -lt 8000000 ]]; then
     #The line below is written to /mnt/ but doesn't contain /mnt/, since it's just / for the sysytem itself.
     echo "/opt/swap/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab #Add swap to fstab, so it KEEPS working after installation.
 fi
-echo "-------------------------------------------------"
-echo "--   SYSTEM READY FOR 1-setup       --"
-echo "-------------------------------------------------"
+

@@ -197,11 +197,10 @@ elif lspci | grep -E "Integrated Graphics Controller"; then
     pacman -S libva-intel-driver libvdpau-va-gl lib32-vulkan-intel vulkan-intel libva-intel-driver libva-utils --needed --noconfirm
 fi
 
-echo -e "\nDone!\n"
-if ! source install.conf; then
-	read -p "Please enter username:" username
+
+read -p "Please enter username:" username
 echo "username=$username" >> ${HOME}/ArgonArch/install.conf
-fi
+
 if [ $(whoami) = "root"  ];
 then
     useradd -m -G wheel -s /bin/bash $username 

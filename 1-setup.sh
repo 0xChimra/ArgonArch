@@ -218,8 +218,8 @@ then
 	passwd $username
 	cp -R /root/ArgonArch /home/$username/
     chown -R $username: /home/$username/ArgonArch
-	read -p "Enter a Hostname:" nameofmachine
-	echo $nameofmachine > /etc/hostname
+	read -p "Enter a Hostname:" hostname
+	echo $hostname > /etc/hostname
 else
 	echo "You are already a user proceed with aur installs"
 fi

@@ -39,8 +39,6 @@ sed -i 's/^#Para/Para/' /etc/pacman.conf
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 pacman -Sy --noconfirm
 
-#echo -e "\nInstalling Base System\n"
-
 PKGS=(
 'mesa'
 'xorg'

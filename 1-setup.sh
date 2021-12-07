@@ -13,9 +13,6 @@ pacman -S --noconfirm reflector rsync
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
 nc=$(grep -c ^processor /proc/cpuinfo)
-echo "You have " $nc" cores."
-echo "-------------------------------------------------"
-echo "Changing the makeflags for "$nc" cores."
 TOTALMEM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*')
 if [[  $TOTALMEM -gt 8000000 ]]; then
 sed -i "s/#MAKEFLAGS=\"-j2\"/MAKEFLAGS=\"-j$nc\"/g" /etc/makepkg.conf
@@ -57,7 +54,6 @@ PKGS=(
 'alsa-plugins'
 'alsa-utils'
 'ark'
-'audiocd-kio' 
 'autoconf'
 'automake'
 'base'
@@ -73,7 +69,6 @@ PKGS=(
 'breeze-gtk'
 'bridge-utils'
 'btrfs-progs'
-'code'
 'cronie'
 'cups'
 'dialog'
@@ -100,8 +95,6 @@ PKGS=(
 'gst-plugins-ugly'
 'gwenview'
 'haveged'
-'htop'
-'iptables-nft'
 'kate'
 'kcodecs'
 'kcoreaddons'
@@ -127,17 +120,15 @@ PKGS=(
 'networkmanager'
 'ntfs-3g'
 'ntp'
-'okular'
 'openbsd-netcat'
 'openssh'
 'os-prober'
-'oxygen'
 'p7zip'
 'pacman-contrib'
 'patch'
 'picom'
 'pkgconf'
-'plasma-meta'
+#'plasma-meta'
 'plasma-nm'
 'powerdevil'
 'powerline-fonts'
@@ -155,7 +146,6 @@ PKGS=(
 'sudo'
 'systemsettings'
 'terminus-font'
-'traceroute'
 'ufw'
 'unrar'
 'unzip'

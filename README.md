@@ -9,7 +9,7 @@
 This Installer will install everything to get a working Plasma KDE Desktop.
 
 ## Features:
-- ucode auto detection & installation
+- [ x ] ucode auto detection & installation
 - graphics card auto detection & driver installation
 - preinstalled ZSH Config + Alias Collection that can be accessed with `zalias` and `zshrc`
 

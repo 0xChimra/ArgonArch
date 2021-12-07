@@ -1,5 +1,4 @@
-# ArchArgon
-A Simple Arch KDE Installer
+![Banner](https://github.com/Blessed-NullArray/ArgonArch/blob/master/banner.png?raw=true)
 
 ## Usage:
 ![Usage](https://github.com/Blessed-NullArray/ArgonArch/blob/master/image1.png?raw=true)

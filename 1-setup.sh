@@ -128,7 +128,7 @@ PKGS=(
 'patch'
 'picom'
 'pkgconf'
-#'plasma-meta'
+'plasma-meta'
 'plasma-nm'
 'powerdevil'
 'powerline-fonts'

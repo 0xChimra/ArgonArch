@@ -11,12 +11,13 @@ This Installer will install everything to get a working Plasma KDE Desktop.
 ## Features:
 - [x] ucode auto detection & installation
 - [x] graphics card auto detection & driver installation
-- [x] preinstalled ZSH Config + Alias Collection that can be accessed with `zalias` and `zshrc`
+- [x] preinstalled **ZSH Config** ( can be accessed with `zshrc` in the terminal) & **Alias Collection** ( can be accessed with `zalias` terminal)
 
 ## WIP Features:
 - [ ] Language, Keymap & Region selection via a list of languages
 - [ ] chroot into the system after full installation
 - [ ] additional options to install premade packages deticated to for example **Gaming** or **Utility**
+- [ ] premade theme packages to be automatically installed if chosen in the installer
 - [ ] system setup over a proxy or tor
 
 ## Usage:

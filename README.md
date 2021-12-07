@@ -1,4 +1,9 @@
-![Banner](https://github.com/Blessed-NullArray/ArgonArch/blob/master/banner.png?raw=true)
+<p align="center">
+  <img src="https://github.com/Blessed-NullArray/ArgonArch/blob/master/banner.png?raw=true" />
+</p>
+
+
+
 
 ## Usage:
 ![Usage](https://github.com/Blessed-NullArray/ArgonArch/blob/master/image1.png?raw=true)

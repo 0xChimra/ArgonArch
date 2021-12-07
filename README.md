@@ -16,6 +16,7 @@ This Installer will install everything to get a working Plasma KDE Desktop.
 ## WIP Features:
 - [ ] Language selection via a list of languages
 - [ ] chroot into the system after full installation
+- [ ] additional options to install premade packages deticated to for example **Gaming** or **Utility**
 - [ ] system setup over a proxy or tor
 
 ## Usage:

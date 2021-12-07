@@ -14,7 +14,7 @@ This Installer will install everything to get a working Plasma KDE Desktop.
 - [x] preinstalled ZSH Config + Alias Collection that can be accessed with `zalias` and `zshrc`
 
 ## WIP Features:
-- [ ] Language selection via a list of languages
+- [ ] Language, Keymap & Region selection via a list of languages
 - [ ] chroot into the system after full installation
 - [ ] additional options to install premade packages deticated to for example **Gaming** or **Utility**
 - [ ] system setup over a proxy or tor

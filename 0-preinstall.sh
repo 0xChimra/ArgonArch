@@ -25,29 +25,26 @@ echo -e "-----------------------------------------------------------------------
 reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 mkdir /mnt
 #https://wiki.archlinux.org/title/Locale
-if ! source install.conf; then
-    echo "--------------------------------------------------------------"
-	echo "           Set your locale (example : en_US.UTF-8 )           "
-	echo "--------------------------------------------------------------"
-	read -p "Enter your locale:" locale
-	echo "locale=$locale" >> install.config
-fi
-if ! source install.conf; then
-    echo "--------------------------------------------------------------"
-	echo "        Set your Timezone (example : Europe/Berlin)           "
-	echo "--------------------------------------------------------------"
-	read -p "Enter your timezone:" location
-	echo "timezone=$timezone" >> install.config
-fi
-if ! source install.conf; then
-	echo "--------------------------------------------------------------"
-	echo "        Set your keyboard layout (example : de-latin1)        "
-	echo "--------------------------------------------------------------"
-	read -p "Enter your keyboard layout:" keyboard
-	echo "keyboard=$keyboard" >> install.config
-fi
+
+echo "--------------------------------------------------------------"
+echo "        Set your keyboard layout (example : de-latin1)        "
+echo "--------------------------------------------------------------"
+read -p "Enter your keyboard layout: " keyboard
+echo "keyboard=$keyboard" >> install.config
 
 localectl --no-ask-password set-keymap $keyboard
+
+echo "--------------------------------------------------------------"
+echo "           Set your locale (example : en_US.UTF-8 )           "
+echo "--------------------------------------------------------------"
+read -p "Enter your locale: " locale
+echo "locale=$locale" >> install.config
+
+echo "--------------------------------------------------------------"
+echo "        Set your Timezone (example : Europe/Berlin)           "
+echo "--------------------------------------------------------------"
+read -p "Enter your timezone: " location
+echo "timezone=$timezone" >> install.config
 
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs

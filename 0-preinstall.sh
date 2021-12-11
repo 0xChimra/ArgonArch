@@ -26,15 +26,30 @@ echo -e "-----------------------------------------------------------------------
 
 reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
 mkdir /mnt
+#https://wiki.archlinux.org/title/Locale
+if ! source install.conf; then
+    echo "--------------------------------------------------------------"
+	echo "           Set your locale (example : en_US.UTF-8 )           "
+	echo "--------------------------------------------------------------"
+	read -p "Enter your locale:" locale
+	echo "locale=$locale" >> ${HOME}/ArgonArch/install.config
+fi
+if ! source install.conf; then
+    echo "--------------------------------------------------------------"
+	echo "        Set your Timezone (example : Europe/Berlin)           "
+	echo "--------------------------------------------------------------"
+	read -p "Enter your timezone:" location
+	echo "timezone=$timezone" >> ${HOME}/ArgonArch/install.config
+fi
+if ! source install.conf; then
+	echo "--------------------------------------------------------------"
+	echo "        Set your keyboard layout (example : de-latin1)        "
+	echo "--------------------------------------------------------------"
+	read -p "Enter your keyboard layout:" keyboard
+	echo "keyboard=$keyboard" >> ${HOME}/ArgonArch/install.config
+fi
 
-# Set keymaps
-echo "-------------------------------------------------"
-echo "Enter keymap country-code  (example : de, us)"
-echo "-------------------------------------------------"
-read map
-
-localectl --no-ask-password set-keymap $map
-
+localectl --no-ask-password set-keymap $keyboard
 
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs
@@ -48,7 +63,6 @@ read DISK
 echo "THIS WILL FORMAT AND DELETE ALL DATA ON THE DISK"
 read -p "are you sure you want to continue (Y/N):" formatdisk
 case $formatdisk in
-
 y|Y|yes|Yes|YES)
 echo "-------------------------------------------------"
 echo -e "\nFormatting disk...\n$HR"

@@ -12,6 +12,7 @@ This Installer will install everything to get a working Plasma KDE Desktop.
 - [x] ucode auto detection & installation
 - [x] graphics card auto detection & driver installation
 - [x] preinstalled **ZSH Config** ( `zshrc` in the terminal ) & **Alias Collection** ( `zalias` in the terminal )
+- [x] Language, Keymap & Region selection via question
 
 ## WIP Features:
 - [ ] Language, Keymap & Region selection via a list of options

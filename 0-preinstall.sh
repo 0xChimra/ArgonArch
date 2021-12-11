@@ -3,8 +3,6 @@
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 iso=$(curl -4 ifconfig.co/country-iso)
 timedatectl set-ntp true
-#pacman -S --noconfirm pacman-contrib terminus-font
-#setfont ter-v22b
 sed -i 's/^#Para/Para/' /etc/pacman.conf
 pacman -S --noconfirm reflector rsync grub
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
@@ -32,25 +30,25 @@ if ! source install.conf; then
 	echo "           Set your locale (example : en_US.UTF-8 )           "
 	echo "--------------------------------------------------------------"
 	read -p "Enter your locale:" locale
-	echo "locale=$locale" >> ${HOME}/ArgonArch/install.config
+	echo "locale=$locale" >> /root/ArgonArch/install.config
 fi
 if ! source install.conf; then
     echo "--------------------------------------------------------------"
 	echo "        Set your Timezone (example : Europe/Berlin)           "
 	echo "--------------------------------------------------------------"
 	read -p "Enter your timezone:" location
-	echo "timezone=$timezone" >> ${HOME}/ArgonArch/install.config
+	echo "timezone=$timezone" >> /root/ArgonArch/install.config
 fi
 if ! source install.conf; then
 	echo "--------------------------------------------------------------"
 	echo "        Set your keyboard layout (example : de-latin1)        "
 	echo "--------------------------------------------------------------"
 	read -p "Enter your keyboard layout:" keyboard
-	echo "keyboard=$keyboard" >> ${HOME}/ArgonArch/install.config
+	echo "keyboard=$keyboard" >> /root/ArgonArch/install.config
 fi
 
 localectl --no-ask-password set-keymap $keyboard
-^
+
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs
 

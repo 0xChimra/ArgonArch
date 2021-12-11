@@ -50,7 +50,7 @@ if ! source install.conf; then
 fi
 
 localectl --no-ask-password set-keymap $keyboard
-
+^
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs
 

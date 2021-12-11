@@ -20,21 +20,21 @@ echo "Changing the compression settings for "$nc" cores."
 sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf
 fi
 #https://wiki.archlinux.org/title/Locale
-if ! source install.conf; then
+if ! source /mnt/root/ArgonArch/install.conf; then
     echo "--------------------------------------------------------------"
 	echo "           Set your locale (example : en_US.UTF-8 )           "
 	echo "--------------------------------------------------------------"
 	read -p "Enter your locale:" locale
 	echo "locale=$locale" >> ${HOME}/ArgonArch/install.config
 fi
-if ! source install.conf; then
+if ! source /mnt/root/ArgonArch/install.conf; then
     echo "--------------------------------------------------------------"
 	echo "        Set your Timezone (example : Europe/Berlin)           "
 	echo "--------------------------------------------------------------"
 	read -p "Enter your timezone:" location
 	echo "timezone=$timezone" >> ${HOME}/ArgonArch/install.config
 fi
-if ! source install.conf; then
+if ! source /mnt/root/ArgonArch/install.conf; then
 	echo "--------------------------------------------------------------"
 	echo "        Set your keyboard layout (example : de-latin1)        "
 	echo "--------------------------------------------------------------"

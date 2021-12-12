@@ -9,10 +9,10 @@ if ! source ${HOME}/ArgonArch/install.conf; then
 fi
 
 keymap_long="${keyboard}"
-keymap_short=${keymap_long:0:2} ; echo "${keymap_short}"
+keymap_short="${keymap_long:0:2}"
 
 echo $password | sudo -S localectl set-keymap --no-convert $keyboard
-echo $password | sudo -S localectl --no-convert set-x11-keymap $keymap_short
+echo $password | sudo -S localectl set-x11-keymap --no-convert $keymap_short
 
 cd ~
 mkdir -p ${HOME}/Documents/setup

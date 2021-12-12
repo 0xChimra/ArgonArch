@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
+
+if ! source /home/$USER/ArgonArch/install.conf; then
+	echo "--------------------------------------------------------------"
+	echo "        Set your password (example : password123)                "
+	echo "--------------------------------------------------------------"
+	read -p "Enter your password: " password
+	echo "password=$password" >> install.conf
+fi
+echo $password | sudo -S localectl set-keymap --no-convert $keyboard
+echo $password | sudo -S localectl --no-convert set-x11-keymap $keyboard
+
 cd ~
 mkdir -p ${HOME}/Documents/setup
 cd ${HOME}/Documents/setup
 git clone "https://aur.archlinux.org/yay.git"
 cd ${HOME}/Documents/setup/yay
-makepkg -si --noconfirm
+echo $password | sudo -S makepkg -si --noconfirm
 cd ~
 touch "$HOME/.cache/zshhistory"
 chsh -s $(which zsh)

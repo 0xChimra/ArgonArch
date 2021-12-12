@@ -63,8 +63,7 @@ if ! source /root/ArgonArch/install.conf; then
 	read -p "Enter your password: " password
 	echo "password=$password" >> install.conf
 fi
-localectl set-keymap --no-convert $keyboard
-localectl --no-convert set-x11-keymap $keyboard
+
 #Change the locale
 sed -i 's/^#${locale} UTF-8/${locale} UTF-8/' /etc/locale.gen
 locale-gen

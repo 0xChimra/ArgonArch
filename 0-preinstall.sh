@@ -43,7 +43,7 @@ echo "locale=$locale" >> install.config
 echo "--------------------------------------------------------------"
 echo "        Set your Timezone (example : Europe/Berlin)           "
 echo "--------------------------------------------------------------"
-read -p "Enter your timezone: " location
+read -p "Enter your timezone: " timezone
 echo "timezone=$timezone" >> install.config
 
 echo -e "\nInstalling prereqs...\n$HR"

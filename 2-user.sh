@@ -19,10 +19,10 @@ cd ${HOME}/Documents/setup/yay
 makepkg -si --noconfirm
 cd ~
 
-echo $password | sudo -S localectl --no-ask-password set-keymap $keyboard_short
-echo $password | sudo -S localectl --no-ask-password set-x11-keymap $keymap_short
-#localectl --no-ask-password set-keymap $keyboard_short
-#localectl --no-ask-password set-x11-keymap $keyboard_short
+#echo $password | sudo -S localectl --no-ask-password set-keymap $keyboard_short
+#echo $password | sudo -S localectl --no-ask-password set-x11-keymap $keymap_short
+localectl --no-ask-password set-keymap $keyboard_short
+localectl --no-ask-password set-x11-keymap $keyboard_short
 
 touch "$HOME/.cache/zshhistory"
 chsh -s $(which zsh)

@@ -30,7 +30,7 @@ echo "--------------------------------------------------------------"
 echo "        Set your keyboard layout (example : de-latin1)        "
 echo "--------------------------------------------------------------"
 read -p "Enter your keyboard layout: " keyboard
-echo "keyboard=$keyboard" >> install.config
+echo "keyboard=$keyboard" >> install.conf
 
 localectl --no-ask-password set-keymap $keyboard
 
@@ -38,13 +38,13 @@ echo "--------------------------------------------------------------"
 echo "           Set your locale (example : en_US.UTF-8 )           "
 echo "--------------------------------------------------------------"
 read -p "Enter your locale: " locale
-echo "locale=$locale" >> install.config
+echo "locale=$locale" >> install.conf
 
 echo "--------------------------------------------------------------"
 echo "        Set your Timezone (example : Europe/Berlin)           "
 echo "--------------------------------------------------------------"
 read -p "Enter your timezone: " timezone
-echo "timezone=$timezone" >> install.config
+echo "timezone=$timezone" >> install.conf
 
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs

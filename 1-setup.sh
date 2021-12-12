@@ -41,11 +41,10 @@ if ! source /root/ArgonArch/install.conf; then
 	echo "--------------------------------------------------------------"
 	echo "        Set your keyboard layout (example : de-latin1)        "
 	echo "--------------------------------------------------------------"
-	read -p "Enter your keyboard layout:" keyboard
 	echo "keyboard=$keyboard" >> /root/ArgonArch/install.conf
 fi
 #Change the locale
-sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/^#${locale} UTF-8/${locale} UTF-8/' /etc/locale.gen
 locale-gen
 timedatectl --no-ask-password set-timezone $timezone
 timedatectl --no-ask-password set-ntp 1

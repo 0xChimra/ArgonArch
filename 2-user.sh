@@ -23,7 +23,7 @@ cd ~
 #echo $password | sudo -S localectl set-x11-keymap --no-convert $keymap_short
 
 localectl --no-ask-password set-keymap $keyboard
-localectl --no-ask-password set-x11-keymap $keyboard_short
+localectl --no-ask-password set-x11-keymap $keyboard
 
 touch "$HOME/.cache/zshhistory"
 chsh -s $(which zsh)

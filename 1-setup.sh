@@ -37,7 +37,7 @@ if ! source /root/ArgonArch/install.conf; then
 fi
 if ! source /root/ArgonArch/install.conf; then
 	echo "--------------------------------------------------------------"
-	echo "        Set your keyboard layout (example : de)               "
+	echo "        Set your keyboard layout (example : de-latin1)               "
 	echo "--------------------------------------------------------------"
 	read -p "Enter your keyboard layout: " keyboard
 	echo "keyboard=$keyboard" >> /root/ArgonArch/install.conf

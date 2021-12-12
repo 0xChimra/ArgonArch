@@ -27,7 +27,7 @@ mkdir /mnt
 #https://wiki.archlinux.org/title/Locale
 
 echo "--------------------------------------------------------------"
-echo "        Set your keyboard layout (example : de)        "
+echo "        Set your keyboard layout (example : de-latin1)        "
 echo "--------------------------------------------------------------"
 read -p "Enter your keyboard layout: " keyboard
 echo "keyboard=$keyboard" >> install.conf

@@ -19,6 +19,9 @@ sed -i "s/#MAKEFLAGS=\"-j2\"/MAKEFLAGS=\"-j$nc\"/g" /etc/makepkg.conf
 echo "Changing the compression settings for "$nc" cores."
 sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf
 fi
+echo "--------------------------------------"
+pwd
+echo "--------------------------------------"
 #https://wiki.archlinux.org/title/Locale
 if ! source /root/ArgonArch/install.conf; then
     echo "--------------------------------------------------------------"

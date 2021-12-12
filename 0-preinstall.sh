@@ -27,7 +27,7 @@ mkdir /mnt
 #https://wiki.archlinux.org/title/Locale
 
 echo "--------------------------------------------------------------"
-echo "        Set your keyboard layout (example : de-latin1)        "
+echo "        Set your keyboard layout (example : de)        "
 echo "--------------------------------------------------------------"
 read -p "Enter your keyboard layout: " keyboard
 echo "keyboard=$keyboard" >> install.conf
@@ -46,12 +46,30 @@ echo "--------------------------------------------------------------"
 read -p "Enter your timezone: " timezone
 echo "timezone=$timezone" >> install.conf
 
+echo "--------------------------------------------------------------"
+echo "        Set your username (example : argonuser)               "
+echo "--------------------------------------------------------------"
+read -p "Enter your username: " username
+echo "username=$username" >> install.conf
+
+echo "--------------------------------------------------------------"
+echo "        Set your hostname (example : ArgonBox)                "
+echo "--------------------------------------------------------------"
+read -p "Enter your hostname: " hostname
+echo "hostname=$hostname" >> install.conf
+
+echo "--------------------------------------------------------------"
+echo "        Set your password (example : password123)                "
+echo "--------------------------------------------------------------"
+read -p "Enter your password: " password
+echo "password=$password" >> install.conf
+
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs
 
-echo "-------------------------------------------------"
-echo "-------Select Your Disk To Format----------------"
-echo "-------------------------------------------------"
+echo "--------------------------------------------------------------"
+echo "               Select Your Disk To Format                     "
+echo "--------------------------------------------------------------"
 lsblk
 echo "Please enter disk to work on: (example /dev/sda)"
 read DISK
@@ -59,9 +77,9 @@ echo "THIS WILL FORMAT AND DELETE ALL DATA ON THE DISK"
 read -p "are you sure you want to continue (Y/N):" formatdisk
 case $formatdisk in
 y|Y|yes|Yes|YES)
-echo "-------------------------------------------------"
+echo "--------------------------------------------------------------"
 echo -e "\nFormatting disk...\n$HR"
-echo "-------------------------------------------------"
+echo "--------------------------------------------------------------"
 
 # disk prep
 sgdisk -Z ${DISK} # zap all on disk
